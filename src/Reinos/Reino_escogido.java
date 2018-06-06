@@ -11,5 +11,8 @@ package Reinos;
  * @author Luisa Arevalo <00038617@uca.edu.sv>
  */
 public interface Reino_escogido {
-    void getReino(String reino);
+    void Grupo_de_Unidades(int Cantidad);
+    void Tipo_recursos();
+    void Edificaciones();
+    void Vehiculos();
 }
