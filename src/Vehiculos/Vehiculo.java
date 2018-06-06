@@ -11,5 +11,5 @@ package Vehiculos;
  * @author Luisa Arevalo <00038617@uca.edu.sv>
  */
 public interface Vehiculo {
-
+    void Transportar();
 }
