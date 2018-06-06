@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package Unidades;
 
 /**
@@ -11,14 +5,18 @@ package Unidades;
  * @author Luisa Arevalo <00038617@uca.edu.sv>
  */
 public class Unidades {
-    public int PV;
-    public final int Atk;
-    public final int Def;
 
-    public Unidades(int Atk, int Def) {
-        this.Atk = Atk;
-        this.Def = Def;
-    }
+    /**
+     * Clase Unidades, esta es la clase base de las otras unidades
+     * por defecto una unidad inicia con:
+     * - 40 Puntos Vitales
+     * - 35 de Ataque
+     * - 30 de Defensa
+     */
+    
+    private int PV = 40;
+    private int Atk = 35;
+    private int Def = 30;
 
     public int getPV() {
         return PV;
@@ -32,41 +30,15 @@ public class Unidades {
         return Atk;
     }
 
-//    public void setAtk(int Atk) {
-//        this.Atk = Atk;
-//    }
+    public void setAtk(int Atk) {
+        this.Atk = Atk;
+    }
 
     public int getDef() {
         return Def;
     }
 
-//    public void setDef(int Def) {
-//        this.Def = Def;
-//    }
-    public static class BuilderUnidades {
-
-        public int PV;
-        public final int Atk;
-        public final int Def;
-
-        public BuilderUnidades(int Atk, int Def) {
-            this.Atk = Atk;
-            this.Def = Def;
-        }
-
-        public Unidades build() {
-            return new Unidades(this);
-        }
-
-        public BuilderUnidades PV(int pv) {
-            this.PV = pv;
-            return this;
-        }
+    public void setDef(int Def) {
+        this.Def = Def;
     }
-    public Unidades(BuilderUnidades build){
-        this.PV = build.PV;
-        this.Atk = build.Atk;
-        this.Def = build.Def;
-    }
-    
 }
