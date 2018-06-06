@@ -11,5 +11,7 @@ package Recursos;
  * @author Luisa Arevalo <00038617@uca.edu.sv>
  */
 public interface Recursos_de_razas {
-    void recolectar();
+    void recolectar_r1();
+    void recolectar_r2();
+    void recolectar_r3();
 }
