@@ -6,6 +6,8 @@
 
 package luisa_arevalo.s_world;
 
+import Reinos.Reino_escogido;
+
 /**
  *
  * @author Luisa Arevalo <00038617@uca.edu.sv>
@@ -16,7 +18,10 @@ public class Luisa_ArevaloS_World {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        FabricaAbstracta l;
+        l= FabricaProductora.getFactory("Reino");
+        Reino_escogido reino = l.getReino("Arkanea");
+        reino.Grupo_de_Unidades(4);
     }
 
 }
