@@ -8,8 +8,6 @@ package Reinos;
 
 import Edificaciones.Edificaciones_Accion;
 import Recursos.Recursos_de_razas;
-import Unidades.FabricaDeUnidades;
-import Unidades.Unidades;
 import Vehiculos.Vehiculo;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -41,11 +39,6 @@ public class FabricaDeReinos  implements FabricaAbstracta{
 
     @Override
     public Recursos_de_razas getRecurso(String nombre_recurso) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public Unidades getUnidad(String nombre_unidad) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
