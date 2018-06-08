@@ -10,6 +10,6 @@ package Reinos;
  *
  * @author Luisa Arevalo <00038617@uca.edu.sv>
  */
-public class Rigel{
+public class BuilderReinos {
 
 }
