@@ -1,43 +1,39 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
 package Unidades;
 
 /**
  *
  * @author Luisa Arevalo <00038617@uca.edu.sv>
  */
-public class Mercenario extends Unidades implements Unidad_accion {
+public class Mercenario extends BuilderUnidades {
 
+    public Mercenario() {}
+    
     @Override
-    public void setDef(int Def) {
-        super.setDef(Def);
+    public void atacar() {
+        this.unidad.setAtk(45);
+        //System.out.println("Hya!!!");
     }
 
     @Override
-    public void setAtk(int Atk) {
-        super.setAtk(Atk); 
+    public void defender() {
+        this.unidad.setDef(30);
+        //System.out.println("No dejare que me destruyas");
     }
 
     @Override
-    public void setPV(int PV) {
-        super.setPV(PV); 
-    }
- 
-    @Override
-    public int atacar(Object edificio_o_unidad) {
-        return 0;
+    public void nombre_Unidad() {
+        this.unidad.setNombre_Unidad("Mercenario");
     }
 
     @Override
-    public void defender(Object edificio_o_unidad) {
-        System.out.println("You can't touch me");
-    }
-
-    @Override
-    public void esperar() {
-        System.out.println("Ready when you are");
+    public void Puntos_Vitales() {
+        this.unidad.setPV(45);
     }
     
-    public Mercenario Build(){
-        return this;
-    }
-
 }

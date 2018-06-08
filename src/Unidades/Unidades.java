@@ -1,22 +1,32 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
 package Unidades;
 
 /**
  *
  * @author Luisa Arevalo <00038617@uca.edu.sv>
  */
-public class Unidades {
 
+
+public class Unidades {
+    
     /**
-     * Clase Unidades, esta es la clase base de las otras unidades
-     * por defecto una unidad inicia con:
-     * - 40 Puntos Vitales
-     * - 35 de Ataque
-     * - 30 de Defensa
+     * Las estadisticas normales de una unidad normal son:
+     * - Puntos Vitales: 45
+     * - Ataque:    40
+     * - Defensa:   35
      */
     
-    private int PV = 40;
-    private int Atk = 35;
-    private int Def = 30;
+    private int PV;
+    private int Atk;
+    private int Def;
+    private String nombre_Unidad;
+    
+    public Unidades(){}
 
     public int getPV() {
         return PV;
@@ -41,4 +51,14 @@ public class Unidades {
     public void setDef(int Def) {
         this.Def = Def;
     }
+
+    public String getNombre_Unidad() {
+        return nombre_Unidad;
+    }
+
+    public void setNombre_Unidad(String nombre_Unidad) {
+        this.nombre_Unidad = nombre_Unidad;
+    }
+    
+    
 }

@@ -1,39 +1,35 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
 package Unidades;
 
 /**
  *
  * @author Luisa Arevalo <00038617@uca.edu.sv>
  */
-public class Soldado extends Unidades implements Unidad_accion {
+public class Soldado extends BuilderUnidades{
 
     @Override
-    public void setDef(int Def) {
-        super.setDef(Def); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void setAtk(int Atk) {
-        super.setAtk(Atk); //To change body of generated methods, choose Tools | Templates.
+    public void atacar() {
+        this.unidad.setAtk(40);
     }
 
     @Override
-    public void setPV(int PV) {
-        super.setPV(PV); //To change body of generated methods, choose Tools | Templates.
-    }
-    
-    @Override
-    public int atacar(Object edificio_o_unidad) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void defender() {
+        this.unidad.setDef(35);
     }
 
     @Override
-    public void defender(Object edificio_o_unidad) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void nombre_Unidad() {
+        this.unidad.setNombre_Unidad("Soldado");
     }
 
     @Override
-    public void esperar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void Puntos_Vitales() {
+        this.unidad.setPV(45);
     }
-    
+
 }
