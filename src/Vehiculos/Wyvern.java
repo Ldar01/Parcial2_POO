@@ -10,11 +10,6 @@ package Vehiculos;
  *
  * @author Luisa Arevalo <00038617@uca.edu.sv>
  */
-public class Wyvern implements Vehiculo {
-
-    @Override
-    public void Transportar() {
-        System.out.println("*Heavy flight*");
-    }
+public class Wyvern{
     
 }

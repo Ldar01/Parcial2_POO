@@ -10,11 +10,7 @@ package Vehiculos;
  *
  * @author Luisa Arevalo <00038617@uca.edu.sv>
  */
-public class Pegaso implements Vehiculo{
+public class Pegaso{
 
-    @Override
-    public void Transportar() {
-        System.out.println("*Flies in the air*");
-    }
     
 }

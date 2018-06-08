@@ -10,10 +10,6 @@ package Vehiculos;
  *
  * @author Luisa Arevalo <00038617@uca.edu.sv>
  */
-public class Caballo implements Vehiculo{
+public class Caballo{
 
-    @Override
-    public void Transportar() {
-        System.out.println("*Track track track*");}
-    
 }
