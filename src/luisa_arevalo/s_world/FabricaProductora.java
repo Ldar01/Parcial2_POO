@@ -7,7 +7,6 @@
 package luisa_arevalo.s_world;
 
 import Reinos.FabricaDeReinos;
-import Unidades.FabricaDeUnidades;
 
 /**
  *
@@ -19,7 +18,7 @@ public class FabricaProductora {
             case "Reino":
                 return new FabricaDeReinos();
             case "Unidad":
-                return new FabricaDeUnidades();
+                //return new FabricaDeUnidades();
         }
         return null;
     }

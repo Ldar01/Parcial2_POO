@@ -10,8 +10,6 @@ import Edificaciones.Edificaciones_Accion;
 import Recursos.Recursos_de_razas;
 import Reinos.Reino_escogido;
 import Vehiculos.Vehiculo;
-import Unidades.Unidad_accion;
-import Unidades.Unidades;
 
 /**
  *
@@ -21,7 +19,6 @@ public interface FabricaAbstracta {
     Reino_escogido getReino(String nombre_reino);
     Edificaciones_Accion getEdificacion(String nombre_edificacion);
     Recursos_de_razas getRecurso(String nombre_recurso);
-    Unidades getUnidad(String nombre_unidad);
     Vehiculo getVehiculo(String nombre_vehiculo);
     
 }
