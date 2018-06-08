@@ -6,7 +6,10 @@
 
 package luisa_arevalo.s_world;
 
-import Reinos.Reino_escogido;
+import Unidades.BuilderUnidades;
+import Unidades.Director_Unidades;
+import Unidades.Mercenario;
+import Unidades.Unidades;
 
 /**
  *
@@ -18,10 +21,20 @@ public class Luisa_ArevaloS_World {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        FabricaAbstracta l;
-        l= FabricaProductora.getFactory("Reino");
-        Reino_escogido reino = l.getReino("Arkanea");
-        reino.Grupo_de_Unidades(4);
+        Director_Unidades objFabrica = new Director_Unidades();
+        BuilderUnidades mercenario = new Mercenario();
+        
+        objFabrica.Construir(mercenario);
+        Unidades mer = mercenario.getUnidad();
+        
+        mostrarCaracteristicas(mer);
+    }
+    
+    public static void mostrarCaracteristicas(Unidades unidad){
+        System.out.println("Nombre:\t"+ unidad.getNombre_Unidad());
+        System.out.println("Puntos Vitales:\t"+ unidad.getPV());
+        System.out.println("Ataque:\t"+ unidad.getAtk());
+        System.out.println("Defensa:\t"+ unidad.getDef());
     }
 
 }
