@@ -12,4 +12,13 @@ package Reinos;
  */
 public class Director_Reinos {
 
+    public Director_Reinos() {}
+    
+    public void Construir_Reino(BuilderReinos build){
+        build.CrearNuevoReino();
+        build.nombre_Reino();
+        build.Edificaciones_Reino();
+        build.Unidades_Reino();
+    }
+
 }
