@@ -6,10 +6,29 @@
 
 package Reinos;
 
+import Edificaciones.ListaEdificaciones;
+import Unidades.ListaDeUnidades;
+
 /**
  *
  * @author Luisa Arevalo <00038617@uca.edu.sv>
  */
-public class Zofia{
+public class Zofia extends BuilderReinos{
+    ListaEdificaciones listaEdificaciones;
+    ListaDeUnidades listaUnidades;
+    
+    @Override
+    public void nombre_Reino() {
+        this.reino.setNombre("Zofia");
+    }
 
+    @Override
+    public void Edificaciones_Reino() {
+        this.reino.setListaEdificaciones(listaEdificaciones);
+    }
+
+    @Override
+    public void Unidades_Reino() {
+        this.reino.setListaUnidades(listaUnidades);
+    }
 }
