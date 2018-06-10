@@ -35,6 +35,7 @@ public class Reino {
     }
 
     public ListaDeUnidades getListaUnidades() {
+        listaUnidades.mostrarInformacionUnit();
         return listaUnidades;
     }
 
