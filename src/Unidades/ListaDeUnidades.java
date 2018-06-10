@@ -34,9 +34,9 @@ public class ListaDeUnidades {
         String nombre_Unit;
         
         System.out.println("Que Unidad desea para su Reino?\n"
-                + "- Milicia\n"
-                + "- Vehiculo\n"
-                + "- Recursos\n"
+                + "- Soldado\n"
+                + "- Caballero\n"
+                + "- Mercenario\n"
                 + "Opcion: \n");
         nombre_Unit = read.nextLine();
         
@@ -45,19 +45,19 @@ public class ListaDeUnidades {
                 FabricaDeUnidades.Construir(soldado);
                 sol = soldado.getUnidad();
                 listaUnidades.add(sol);
-                System.out.println("Agregado!");
+                System.out.println("Agregado!\n");
                 break;
             case "Caballero":
                 FabricaDeUnidades.Construir(caballero);
                 cab = caballero.getUnidad();
                 listaUnidades.add(cab);
-                System.out.println("Agregado!");
+                System.out.println("Agregado!\n");
                 break;
             case "Mercenario":
                 FabricaDeUnidades.Construir(mercenario);
                 mer = mercenario.getUnidad();
                 listaUnidades.add(mer);
-                System.out.println("Agregado!");
+                System.out.println("Agregado!\n");
                 break;
             default:
                 System.out.println("No se puede agregar porque lo que escribio\n"
@@ -74,7 +74,7 @@ public class ListaDeUnidades {
                 System.out.println("==================================\n");
                 System.out.println(u.getNombre_Unidad());
                 System.out.println("Puntos Vitales:\t" + u.getPV());
-                System.out.println("Ataque:\t" + u.getAtk());
+                System.out.println("Ataque:\t\t" + u.getAtk());
                 System.out.println("Defensa:\t" + u.getDef());
                 System.out.println("===================================\n");
             }
