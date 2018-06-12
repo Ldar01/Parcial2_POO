@@ -11,14 +11,15 @@ package Unidades;
  * @author Luisa Arevalo <00038617@uca.edu.sv>
  */
 public class Caballero extends BuilderUnidades {
-
+    
+    
     @Override
-    public void atacar() {
+    public void ataque() {
         this.unidad.setAtk(40);
     }
 
     @Override
-    public void defender() {
+    public void defensa() {
         this.unidad.setDef(35);
     }
 
@@ -32,4 +33,9 @@ public class Caballero extends BuilderUnidades {
         this.unidad.setPV(45);
     }
 
+    @Override
+    public void Disponibilidad() {
+        this.unidad.setAvailable(true);
+    }
+    
 }

@@ -18,8 +18,9 @@ public class Director_Unidades {
         build.CrearNuevaUnidad();
         build.nombre_Unidad();
         build.Puntos_Vitales();
-        build.atacar();
-        build.defender();
+        build.ataque();
+        build.defensa();
+        build.Disponibilidad();
     }
     
 }

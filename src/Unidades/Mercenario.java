@@ -3,8 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package Unidades;
+
 
 /**
  *
@@ -12,16 +12,15 @@ package Unidades;
  */
 public class Mercenario extends BuilderUnidades {
 
-    public Mercenario() {}
-    
     @Override
-    public void atacar() {
+    public void ataque() {
         this.unidad.setAtk(45);
+
         //System.out.println("Hya!!!");
     }
 
     @Override
-    public void defender() {
+    public void defensa() {
         this.unidad.setDef(30);
         //System.out.println("No dejare que me destruyas");
     }
@@ -35,5 +34,11 @@ public class Mercenario extends BuilderUnidades {
     public void Puntos_Vitales() {
         this.unidad.setPV(45);
     }
-    
+
+    @Override
+    public void Disponibilidad() {
+        this.unidad.setAvailable(true);
+    }
+
+  
 }

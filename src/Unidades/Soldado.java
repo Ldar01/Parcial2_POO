@@ -13,12 +13,12 @@ package Unidades;
 public class Soldado extends BuilderUnidades{
 
     @Override
-    public void atacar() {
+    public void ataque() {
         this.unidad.setAtk(40);
     }
 
     @Override
-    public void defender() {
+    public void defensa() {
         this.unidad.setDef(35);
     }
 
@@ -30,6 +30,11 @@ public class Soldado extends BuilderUnidades{
     @Override
     public void Puntos_Vitales() {
         this.unidad.setPV(45);
+    }
+
+    @Override
+    public void Disponibilidad() {
+        this.unidad.setAvailable(true);
     }
 
 }

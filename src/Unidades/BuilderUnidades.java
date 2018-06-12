@@ -20,10 +20,11 @@ public abstract class BuilderUnidades {
         this.unidad = new Unidades();
     }
     
-    public abstract void atacar();
-    public abstract void defender();
+    public abstract void ataque();
+    public abstract void defensa();
     public abstract void nombre_Unidad();
     public abstract void Puntos_Vitales();
+    public abstract void Disponibilidad();
     
     
 }
