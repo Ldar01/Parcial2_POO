@@ -81,4 +81,19 @@ public class ListaDeUnidades {
         }
 
     }
+    
+    public boolean VerificarUnitsAlive(){
+        for(Unidades u : listaUnidades){
+            if(!u.isAvailable()){
+                EliminarUnit(listaUnidades.indexOf(u));
+                return false;
+            }
+            return true;
+        }
+        return true;
+    }
+    
+    public void EliminarUnit( int num_unidad){
+        listaUnidades.remove(num_unidad);
+    }
 }
