@@ -49,20 +49,30 @@ public class Rigel extends BuilderReinos {
     @Override
     public void Unidades_Reino() {
         Scanner read = new Scanner(System.in);
-        int numero_Unidades;
+        int numero_Unidades = 0;
 
         System.out.print("\nAhora necesitamos sus unidades para defender su reino\n"
-                + "Ingrese la cantidad de unidades (Maximo 5): ");
-        numero_Unidades = read.nextInt();
-        System.out.println("\n");
-        if ((numero_Unidades > 5) || (numero_Unidades <= 0)) {
-            System.out.println("No puede agregar mas de 5 o no puede ingresar un numero negativo");
-        } else {
-            for (int i = 0; i < numero_Unidades; i++) {
-                System.out.println("Unidad " + (i + 1));
-                listaUnidades.AgregarUnidades();
+                + "Ingrese la CANTIDAD de unidades (Maximo 5): ");
+        do {
+            try {
+                numero_Unidades = read.nextInt();
+                System.out.println("\n");
+                if ((numero_Unidades > 5) || (numero_Unidades <= 0)) {
+                    System.out.println("No puede agregar mas de 5 o no puede ingresar un numero negativo");
+                } else {
+                    for (int i = 0; i < numero_Unidades; i++) {
+                        System.out.println("Unidad " + (i + 1));
+                        listaUnidades.AgregarUnidades();
+                    }
+                    this.reino.setListaUnidades(listaUnidades);
+                }
+            } catch (Exception e) {
+                System.err.println("Lo que ingresaste no es un numero");
+                //numero_Unidades = read.nextInt();
+                read.nextLine();
             }
-            this.reino.setListaUnidades(listaUnidades);
-        }
+
+        } while (numero_Unidades > 5 || numero_Unidades <= 0);
+
     }
 }
