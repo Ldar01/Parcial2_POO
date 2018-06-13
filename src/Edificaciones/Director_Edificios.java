@@ -18,6 +18,8 @@ public class Director_Edificios {
         build.CrearNuevaEdificacion();
         build.nombre();
         build.Puntos_Vitales();
+        build.defensa();
+        build.Disponibilidad();
         build.descripcion();
         build.nivel();
     }

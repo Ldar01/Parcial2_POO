@@ -32,4 +32,14 @@ public class Edificio_Vehiculos extends BuilderEdificacion{
         this.edificio.setDescripcion("Edificio donde se almacenan vehiculos");
     }
 
+    @Override
+    public void defensa() {
+        this.edificio.setDef(30);
+    }
+
+    @Override
+    public void Disponibilidad() {
+        this.edificio.setDisponible(true);
+    }
+
 }

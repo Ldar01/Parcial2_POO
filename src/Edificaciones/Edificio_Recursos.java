@@ -31,5 +31,15 @@ public class Edificio_Recursos extends BuilderEdificacion{
     public void descripcion() {
         this.edificio.setDescripcion("Edificio donde esta almacenado algun recurso");
     }
+
+    @Override
+    public void defensa() {
+        this.edificio.setDef(30);
+    }
+
+    @Override
+    public void Disponibilidad() {
+        this.edificio.setDisponible(true);
+    }
     
 }

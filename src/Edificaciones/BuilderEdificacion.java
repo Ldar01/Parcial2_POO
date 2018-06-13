@@ -24,6 +24,12 @@ public abstract class BuilderEdificacion {
     public abstract void nombre();
     public abstract void nivel();
     public abstract void Puntos_Vitales();
+    public abstract void defensa();
+    public abstract void Disponibilidad();
+//    public abstract void recursoA();
+//    public abstract void recursoB();
+//    public abstract void recursoC();
+//    public abstract void unidad_entrenamiento();
     public abstract void descripcion();
     
 }

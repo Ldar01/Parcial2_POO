@@ -33,4 +33,14 @@ public class Edificio_Milicia extends BuilderEdificacion{
                 + "batalla\n");
     }
 
+    @Override
+    public void defensa() {
+        this.edificio.setDef(30);
+    }
+
+    @Override
+    public void Disponibilidad() {
+        this.edificio.setDisponible(true);
+    }
+
 }
