@@ -96,4 +96,16 @@ public class ListaDeUnidades {
     public void EliminarUnit( int num_unidad){
         listaUnidades.remove(num_unidad);
     }
+    
+    public Unidades EscogerUnidadParaAtacar(int unidad){
+        Unidades p;
+        p = listaUnidades.get(unidad);
+        return p;
+    }
+    
+    public void mostrarUnidadesPorOrden(){
+        for(Unidades u : listaUnidades){
+            System.out.println(listaUnidades.indexOf(u)+". "+ u.getNombre_Unidad()+"\n");
+        }
+    }
 }

@@ -27,8 +27,7 @@ public class Unidades {
 
     int pv = 0, def = 0, atk = 0;
 
-    public Unidades() {
-    }
+    public Unidades() {}
 
     public int getPV() {
         return PV;
@@ -80,13 +79,21 @@ public class Unidades {
 //        clase3 = u.getClass().getName();
         System.out.println(p.getClass().getName());
         System.out.println(this.getClass().getName());
-        if (p.getClass().getName() == this.getClass().getName()) {
-            System.out.println("Aqui 2");
-            pv = e.getPV();
-            if (pv > 0) {
-                System.out.println("Aqui 3");
-                pv = pv - this.getAtk();
-                e.setPV(pv);
+        if (p.getClass().getName() != this.getClass().getName()) {
+            e = (Edificacion)p;
+            if (e.isDisponible() && e.getPV() > 0) {
+                atk = this.getAtk() - e.getDef();
+                System.out.println("Efecto de ataque: "+ atk);
+                pv = e.getPV() - atk;
+                if (pv <= 0) {
+                    e.setPV(0);
+                    System.out.println(e.getNombre()+" fue destruido por "+this.getNombre_Unidad());
+                    e.setDisponible(false);
+                    
+                }
+                else{
+                    e.setPV(pv);
+                }
             }
         }
         if (p.getClass().getName() == this.getClass().getName()) {
