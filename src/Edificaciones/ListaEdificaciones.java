@@ -84,4 +84,10 @@ public class ListaEdificaciones {
 
     }
 
+    public void mostrarEdificacionesPorOrden() {
+        for (Edificacion e : listaEdificios) {
+            System.out.println(listaEdificios.indexOf(e) + ". " + e.getNombre() + "\n");
+        }
+    }
+
 }

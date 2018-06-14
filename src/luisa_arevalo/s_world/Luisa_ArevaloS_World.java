@@ -22,15 +22,15 @@ public class Luisa_ArevaloS_World {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-//        Menu m = Menu.getInstance();
-//        m.Inicio();
+        Menu m = Menu.getInstance();
+        m.Inicio();
 
-        Director_Unidades fabrica = new Director_Unidades();
-        BuilderUnidades mercenario = new Mercenario();
-        fabrica.Construir(mercenario);
-        Unidades p = mercenario.getUnidad();
-        Unidades pedro = new Unidades();
-        Edificacion pa = new Edificacion();
+//        Director_Unidades fabrica = new Director_Unidades();
+//        BuilderUnidades mercenario = new Mercenario();
+//        fabrica.Construir(mercenario);
+//        Unidades p = mercenario.getUnidad();
+//        Unidades pedro = new Unidades();
+//        Edificacion pa = new Edificacion();
        // System.out.println(pedro.getPV());
 //        String clase, clase2;
 //        clase = pa.getClass().getName();
@@ -48,8 +48,8 @@ public class Luisa_ArevaloS_World {
 //            System.out.println("La vida de la unidad ahora es: " + pa.getPV());
 //        } while (pa.getPV() != 0);
 
-        Jugador player1 = new Jugador(1);
-        player1.MenuJugador();
-        player1.Menu_Jugar();
+        
+        
+        
     }
 }

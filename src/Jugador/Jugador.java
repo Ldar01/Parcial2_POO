@@ -23,6 +23,7 @@ public class Jugador {
 
     private int cod_Jug;
     private Reino reino_escogido;
+    private boolean turno = true;
 
     public Jugador(int cod_Jug) {
         this.cod_Jug = cod_Jug;
@@ -46,7 +47,15 @@ public class Jugador {
     public void setReino_escogido(Reino reino_escogido) {
         this.reino_escogido = reino_escogido;
     }
+    
+    public boolean isTurno() {
+        return turno;
+    }
 
+    public void setTurno(boolean turno) {
+        this.turno = turno;
+    }
+    
     public Reino MenuJugador() {
 
         Director_Reinos fabricaReinos = new Director_Reinos();
@@ -99,35 +108,17 @@ public class Jugador {
         return null;
     }
 
-    public void Menu_Jugar() {
+    public int Menu_ParaJugar() {
         Unidades p;
-        int opcion, unidad = 0, unidad_enemiga;
+        int opcion;
         //Scanner leer = new Scanner(System.in);
-        System.out.println("\t ====== Player " + this.cod_Jug + " ========\n\n"
-                + "\t 1. Ver tus unidades (u) \t 2. Ver tus edificaciones(e)\n"
-                + "\t 3. Atacar (a) \t 4. Surrender (x)\n\n"
-                + "\t Opcion: ");
+        System.out.println("====== Player " + this.cod_Jug + " ========\n\n"
+                + "1. Ver tus unidades  \t 2. Ver tus edificaciones\n"
+                + "3. Atacar  \t 4. Terminar Turno \n\n"
+                + "Opcion: ");
         Scanner read = new Scanner(System.in);
         opcion = read.nextInt();
-        switch (opcion) {
-            case 1:
-                this.reino_escogido.getListaUnidades().mostrarInformacionUnit();
-                break;
-            case 2:
-                this.reino_escogido.getListaEdificaciones();
-                break;
-            case 3:
-                System.out.println("Que unidad quieres que ataque?\n");
-                this.reino_escogido.getListaUnidades().mostrarUnidadesPorOrden();
-                unidad = read.nextInt();
-                p = this.reino_escogido.getListaUnidades().EscogerUnidadParaAtacar(unidad);
-                // System.out.println(this.reino_escogido.getListaUnidades().EscogerUnidadParaAtacar(unidad).getNombre_Unidad());
-
-                break;
-            case 4:
-                break;
-        }
-
+        return opcion;
     }
 
     public void Batallar(Reino kingdom) {
@@ -140,13 +131,13 @@ public class Jugador {
         Opcion = read.nextInt();
         switch (Opcion) {
             case 1:
-                System.out.println("Que unidad deseas atacar?");
+                System.out.println("Que unidad deseas atacar?\n");
                 kingdom.getListaUnidades().mostrarUnidadesPorOrden();
                 break;
             case 2:
+                System.out.println("Que edificacion quieres atacar?\n");
+                kingdom.getListaEdificaciones().mostrarEdificacionesPorOrden();
                 break;
         }
-    }
-
-
+    }   
 }

@@ -32,7 +32,7 @@ public class Zofia extends BuilderReinos{
         int numero_Edf;
         
         System.out.print("Nota: El Centro de mando ya esta incluido en su reino\n"
-                + "Ingrese la cantidad de edificios(Maximo 2): ");
+                + "Ingrese la CANTIDAD de edificios(Maximo 2): ");
         numero_Edf = read.nextInt();
         if((numero_Edf > 2 ) || (numero_Edf <= 0)){
             System.out.println("No puede agregar mas de 5 o no puede ingresar un numero negativo");
