@@ -20,6 +20,7 @@ public class Director_Unidades {
         build.Puntos_Vitales();
         build.ataque();
         build.defensa();
+        build.Ocupado();
         build.Disponibilidad();
     }
     

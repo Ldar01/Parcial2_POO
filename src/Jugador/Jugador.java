@@ -5,6 +5,7 @@
  */
 package Jugador;
 
+import Edificaciones.Edificacion;
 import Reinos.Arkanea;
 import Reinos.BuilderReinos;
 import Reinos.Director_Reinos;
@@ -47,7 +48,7 @@ public class Jugador {
     public void setReino_escogido(Reino reino_escogido) {
         this.reino_escogido = reino_escogido;
     }
-    
+
     public boolean isTurno() {
         return turno;
     }
@@ -55,7 +56,7 @@ public class Jugador {
     public void setTurno(boolean turno) {
         this.turno = turno;
     }
-    
+
     public Reino MenuJugador() {
 
         Director_Reinos fabricaReinos = new Director_Reinos();
@@ -121,8 +122,10 @@ public class Jugador {
         return opcion;
     }
 
-    public void Batallar(Reino kingdom) {
-        int Opcion = 0;
+    public Object Batallar(Reino kingdom) {
+        int Opcion = 0, ataque;
+        Unidades u;
+        Edificacion e;
         Scanner read = new Scanner(System.in);
         System.out.println("\t Que quieres atacar?\n"
                 + "\t 1. Unidad Enemiga\n"
@@ -131,13 +134,23 @@ public class Jugador {
         Opcion = read.nextInt();
         switch (Opcion) {
             case 1:
-                System.out.println("Que unidad deseas atacar?\n");
-                kingdom.getListaUnidades().mostrarUnidadesPorOrden();
-                break;
+                kingdom.getListaUnidades().VerificarUnitsAlive();
+                if (!kingdom.getListaUnidades().VerificarIfUnitsDied()) {
+                    System.out.println("Que unidad deseas atacar?\n");
+                    kingdom.getListaUnidades().mostrarUnidadesPorOrden();
+                    ataque = read.nextInt();
+                    u = kingdom.getListaUnidades().EscogerUnidadParaAtacar(ataque);
+                    return u;
+                }
+                System.out.println("Todas las Unidades Enemigas Murieron :v");
+                return null;
             case 2:
                 System.out.println("Que edificacion quieres atacar?\n");
                 kingdom.getListaEdificaciones().mostrarEdificacionesPorOrden();
-                break;
+                ataque = read.nextInt();
+                e = kingdom.getListaEdificaciones().EscogerUnidadParaAtacar(ataque);
+                return e;
         }
-    }   
+        return null;
+    }
 }

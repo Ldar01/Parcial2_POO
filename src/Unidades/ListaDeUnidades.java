@@ -10,37 +10,47 @@ import java.util.Scanner;
 
 /**
  *
- * @author Luisa
+ * @author Luisa Arevalo <00038617@uca.edu.sv>
  */
 public class ListaDeUnidades {
-    private ArrayList <Unidades> listaUnidades;
-    
-    public ListaDeUnidades(){
+
+    private ArrayList<Unidades> listaUnidades;
+    private boolean lista_noDisponible = false;
+
+    public ListaDeUnidades() {
         listaUnidades = new ArrayList<>();
     }
-    
-    public void AgregarUnidades(){
-        
+
+    public boolean isLista_noDisponible() {
+        return lista_noDisponible;
+    }
+
+    public void setLista_noDisponible(boolean lista_noDisponible) {
+        this.lista_noDisponible = lista_noDisponible;
+    }
+
+    public void AgregarUnidades() {
+
         Director_Unidades FabricaDeUnidades = new Director_Unidades();
         BuilderUnidades mercenario = new Mercenario();
         BuilderUnidades caballero = new Caballero();
         BuilderUnidades soldado = new Soldado();
-        
+
         Unidades mer;
         Unidades cab;
         Unidades sol;
-        
+
         Scanner read = new Scanner(System.in);
         String nombre_Unit;
-        
+
         System.out.println("Que Unidad desea para su Reino?\n"
                 + "- Soldado\n"
                 + "- Caballero\n"
                 + "- Mercenario\n"
                 + "Opcion: \n");
         nombre_Unit = read.nextLine();
-        
-        switch(nombre_Unit){
+
+        switch (nombre_Unit) {
             case "Soldado":
                 FabricaDeUnidades.Construir(soldado);
                 sol = soldado.getUnidad();
@@ -66,6 +76,7 @@ public class ListaDeUnidades {
         }
 
     }
+
     public void mostrarInformacionUnit() {
         if (listaUnidades.isEmpty()) {
             System.out.println("La lista esta vacia\n");
@@ -81,31 +92,71 @@ public class ListaDeUnidades {
         }
 
     }
-    
-    public boolean VerificarUnitsAlive(){
-        for(Unidades u : listaUnidades){
-            if(!u.isAvailable()){
+
+    public void VerificarUnitsAlive() {
+        for (Unidades u : listaUnidades) {
+            if (!u.isAvailable()) {
                 EliminarUnit(listaUnidades.indexOf(u));
-                return false;
             }
-            return true;
+            continue;
         }
-        return true;
     }
-    
-    public void EliminarUnit( int num_unidad){
+
+    public void EliminarUnit(int num_unidad) {
         listaUnidades.remove(num_unidad);
     }
-    
-    public Unidades EscogerUnidadParaAtacar(int unidad){
+
+    public Unidades EscogerUnidadParaAtacar(int unidad) {
         Unidades p;
         p = listaUnidades.get(unidad);
         return p;
     }
-    
-    public void mostrarUnidadesPorOrden(){
-        for(Unidades u : listaUnidades){
-            System.out.println(listaUnidades.indexOf(u)+". "+ u.getNombre_Unidad()+"\n");
+
+    public void mostrarUnidadesPorOrden() {
+        if (!VerificarSiTodosOcupados()) {
+            for (Unidades u : listaUnidades) {
+                if (!u.WasOcuppied()) {
+                    System.out.println(listaUnidades.indexOf(u) + ". " + u.getNombre_Unidad() + "\n");
+                } else {
+                    System.out.println(listaUnidades.indexOf(u) + ". " + u.getNombre_Unidad() + " (Ocupado)\n");
+                }
+            }
+        }
+
+    }
+
+    public boolean VerificarSiTodosOcupados() {
+        int ElementosLista = listaUnidades.size();
+        int cont = 0;
+        boolean si = true;
+
+        for (Unidades u : listaUnidades) {
+            if (!u.WasOcuppied()) {
+                si = false;
+            } else {
+                si = true;
+                cont++;
+            }
+        }
+        if (cont == ElementosLista) {
+            this.setLista_noDisponible(true);
+            return true;
+        } else {
+            return false;
         }
     }
+    public boolean VerificarIfUnitsDied(){
+        if(listaUnidades.isEmpty()){
+            return true;
+        }
+        return false;
+    }
+    
+    public void DisponerUnidadesAgain(){
+        for(Unidades u: listaUnidades){
+            u.setAvailable(true);
+            System.out.println("Prueba "+listaUnidades.indexOf( u )+ "ESTADO: " + u.isAvailable());
+        }
+    }
+
 }

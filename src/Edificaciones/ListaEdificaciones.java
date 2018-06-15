@@ -89,5 +89,11 @@ public class ListaEdificaciones {
             System.out.println(listaEdificios.indexOf(e) + ". " + e.getNombre() + "\n");
         }
     }
-
+    
+    public Edificacion EscogerUnidadParaAtacar(int edificacion){
+        Edificacion p;
+        p = listaEdificios.get(edificacion);
+        return p;
+    }
+    
 }

@@ -36,5 +36,9 @@ public class Soldado extends BuilderUnidades{
     public void Disponibilidad() {
         this.unidad.setAvailable(true);
     }
-
+    
+    @Override
+    public void Ocupado() {
+        this.unidad.setOcuppied(false);
+    }
 }

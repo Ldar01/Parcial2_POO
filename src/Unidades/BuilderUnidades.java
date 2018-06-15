@@ -25,6 +25,6 @@ public abstract class BuilderUnidades {
     public abstract void nombre_Unidad();
     public abstract void Puntos_Vitales();
     public abstract void Disponibilidad();
-    
+    public abstract void Ocupado();
     
 }

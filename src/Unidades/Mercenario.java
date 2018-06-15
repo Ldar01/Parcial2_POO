@@ -39,6 +39,10 @@ public class Mercenario extends BuilderUnidades {
     public void Disponibilidad() {
         this.unidad.setAvailable(true);
     }
-
+    
+    @Override
+    public void Ocupado() {
+        this.unidad.setOcuppied(false);
+    }
   
 }
