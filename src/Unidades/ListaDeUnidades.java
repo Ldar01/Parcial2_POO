@@ -154,9 +154,12 @@ public class ListaDeUnidades {
     
     public void DisponerUnidadesAgain(){
         for(Unidades u: listaUnidades){
-            u.setAvailable(true);
+            //u.setAvailable(true);
+            u.setOcuppied(false);
             System.out.println("Prueba "+listaUnidades.indexOf( u )+ "ESTADO: " + u.isAvailable());
+            
         }
+        this.setLista_noDisponible(false);
     }
 
 }

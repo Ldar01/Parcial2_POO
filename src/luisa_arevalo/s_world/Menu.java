@@ -81,7 +81,7 @@ public class Menu {
     public void TurnoJugador(Jugador player1, Jugador player2) {
         player1.setTurno(true);
         player1.getReino_escogido().getListaUnidades().DisponerUnidadesAgain();
-        player1.getReino_escogido().getListaUnidades().setLista_noDisponible(false);
+        //player1.getReino_escogido().getListaUnidades().setLista_noDisponible(false);
         int opcion2, unidad;
         Unidades u = new Unidades();
         Unidades u1 = new Unidades();
@@ -102,6 +102,7 @@ public class Menu {
                 case 3:
                     //System.out.println("Aqui 1");
                     if (player1.getReino_escogido().getListaUnidades().isLista_noDisponible() == false) {
+                        System.out.println("Aqui!!!");
                         if (!player1.getReino_escogido().getListaUnidades().VerificarSiTodosOcupados()) {
                             System.out.println("Cual de tus unidades deseas que ataque?\n");
                             player1.getReino_escogido().getListaUnidades().mostrarUnidadesPorOrden();
